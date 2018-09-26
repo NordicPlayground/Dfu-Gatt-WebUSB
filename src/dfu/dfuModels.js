@@ -36,7 +36,7 @@
 
 'use strict';
 
-const crc = require('../crc/index');
+const crc = require('crc/lib/es6');
 const createError = require('./dfuConstants').createError;
 const ErrorCode = require('./dfuConstants').ErrorCode;
 const splitArray = require('../util/arrayUtil').splitArray;
@@ -170,7 +170,7 @@ function _canResumeWriting(data, offset, crc32) {
     return true;
 }
 
-module.exports = {
+export {
     InitPacketState,
     FirmwareState,
 };

@@ -35,7 +35,7 @@
  */
 
 'use strict';
-const crc = require('../../crc/index');
+const crc = require('crc/lib/es6');
 const ErrorCode = require('../dfuConstants').ErrorCode;
 const createError = require('../dfuConstants').createError;
 
