@@ -278,9 +278,8 @@ class Dfu extends EventEmitter {
             return;
         }
         fetch(`./zips/${filename}`)
-            .then(response => response.body)
-            .then(body => body.getReader().read())
-            .then(data => JSZip.loadAsync(data.value))
+            .then(response => response.arrayBuffer())
+            .then(data => JSZip.loadAsync(data))
             .then(zipData => {
                 this.zipData = zipData;
                 console.log(zipData);
