@@ -1,4 +1,3 @@
 [submodule "src/sdk"]
 	path = src/sdk
 	url = https://github.com/mathiasap/pc-ble-driver-webusb.git
-    branch = react-dfu-WIP
