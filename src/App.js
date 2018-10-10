@@ -261,14 +261,19 @@ class App extends Component {
         this.deviceScanner.stop(device);
     }
 
+    dfuTriggerOp() {
+        const webusb = new WebusbInterface(0);
+        return webusb.enterBootloader();
+    }
+
 
     selectStateComponent() {
         switch (this.state.currentState) {
             case reactDfuState.NO_MODULE: {
-                return OpenAdapterComponent(false, this.main.bind(this))
+                return OpenAdapterComponent(false, this.main.bind(this), this.dfuTriggerOp.bind(this))
             }
             case reactDfuState.INITIALIZED: {
-                return OpenAdapterComponent(true, this.main.bind(this))
+                return OpenAdapterComponent(true, this.main.bind(this), this.dfuTriggerOp.bind(this))
             }
             case reactDfuState.SETUP: {
                 return (<p> Setting up..</p>)
