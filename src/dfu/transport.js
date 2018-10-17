@@ -4,11 +4,13 @@ import ButtonlessControlPointService from './bleTransport/buttonlessControlPoint
 import ObjectWriter from './bleTransport/objectWriter';
 import { FirmwareState } from './dfuModels';
 
-const { NRF_SUCCESS, NRF_ERROR_INVALID_PARAM, sd_rpc_app_status_t } = require('../sdk/src/js/sd_rpc_types');
-const { ble_gap_scan_params_t, ble_gap_conn_params_t, ble_gap_addr_t, ble_uuid_t, ble_gattc_handle_range_t } = require('../sdk/src/js/bindings/bleSDAttributeStructs');
-const { sd_ble_gap_connect, sd_ble_gap_conn_param_update } = require('../sdk/src/js/ble_impl/ble_gap_impl');
-const { sd_ble_gattc_primary_services_discover, sd_ble_gattc_characteristics_discover, sd_ble_gattc_descriptors_discover, sd_ble_gattc_exchange_mtu_request } = require('../sdk/src/js/ble_impl/ble_gattc_impl');
-const { uuidToCharacteristic } = require('../sdk/src/js/gattc');
+import { NRF_SUCCESS, NRF_ERROR_INVALID_PARAM, sd_rpc_app_status_t } from 'pc-ble-driver-webusb';
+
+import { ble_gap_scan_params_t, ble_gap_conn_params_t, ble_gap_addr_t, ble_uuid_t, ble_gattc_handle_range_t } from 'pc-ble-driver-webusb';
+import { sd_ble_gap_connect, sd_ble_gap_conn_param_update, sd_ble_gattc_primary_services_discover, sd_ble_gattc_characteristics_discover,
+sd_ble_gattc_descriptors_discover, sd_ble_gattc_exchange_mtu_request } from 'pc-ble-driver-webusb';
+
+import { uuidToCharacteristic } from 'pc-ble-driver-webusb';
 const { bleUUID128t } = require('../util/uuid');
 
 

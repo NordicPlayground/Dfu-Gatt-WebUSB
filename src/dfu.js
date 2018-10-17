@@ -1,4 +1,12 @@
 /*global Module */
+import { descriptorHandleToCharacteristic, GattcDescriptor, GattcService, GattcCharacteristic, characteristicHandleToService, uuidToCharacteristic } from 'pc-ble-driver-webusb';
+
+import { sd_rpc_log_severity_t, sd_rpc_app_status_t, NRF_SUCCESS, BLE_GAP_EVT_CONNECTED, BLE_GATTC_EVT_READ_RSP, BLE_GAP_EVT_ADV_REPORT, BLE_GATTC_EVT_PRIM_SRVC_DISC_RSP, BLE_GATTC_EVT_CHAR_DISC_RSP, BLE_GATTC_EVT_DESC_DISC_RSP, BLE_GATTC_EVT_WRITE_RSP, BLE_GAP_EVT_CONN_PARAM_UPDATE_REQUEST,
+BLE_GAP_EVT_SEC_PARAMS_REQUEST, BLE_GATTC_EVT_HVX, BLE_GATTC_EVT_EXCHANGE_MTU_RSP, BLE_EVT_TX_COMPLETE, BLE_GAP_EVT_DISCONNECTED } from 'pc-ble-driver-webusb';
+
+import { sd_ble_gattc_hv_confirm } from 'pc-ble-driver-webusb';
+import { ble_event_struct } from 'pc-ble-driver-webusb';
+
 const _ = require('underscore');
 const JSZip = require('jszip');
 const EventEmitter = require('events');
@@ -7,17 +15,7 @@ const { BleTransport } = require('./dfu/transport');
 
 const logLevel = require('./util/logLevel');
 const { createError, ErrorCode } = require('./dfu/dfuConstants');
-const { descriptorHandleToCharacteristic, GattcDescriptor, GattcService, GattcCharacteristic, characteristicHandleToService, uuidToCharacteristic } = require('./sdk/src/js/gattc');
-
-const { sd_rpc_log_severity_t, sd_rpc_app_status_t, NRF_SUCCESS, BLE_GAP_EVT_CONNECTED, BLE_GATTC_EVT_READ_RSP, BLE_GAP_EVT_ADV_REPORT, BLE_GATTC_EVT_PRIM_SRVC_DISC_RSP, BLE_GATTC_EVT_CHAR_DISC_RSP, BLE_GATTC_EVT_DESC_DISC_RSP, BLE_GATTC_EVT_WRITE_RSP, BLE_GAP_EVT_CONN_PARAM_UPDATE_REQUEST,
-BLE_GAP_EVT_SEC_PARAMS_REQUEST, BLE_GATTC_EVT_HVX, BLE_GATTC_EVT_EXCHANGE_MTU_RSP, BLE_EVT_TX_COMPLETE, BLE_GAP_EVT_DISCONNECTED } = require('./sdk/src/js/sd_rpc_types');
-
-const { sd_ble_gattc_hv_confirm } = require('./sdk/src/js/ble_impl/ble_gattc_impl');
-
-
 const DfuSpeedometer = require('./dfu/dfuSpeedometer');
-
-const { ble_event_struct } = require('./sdk/src/js/bindings/bleEvtStruct');
 const dfuEvent = new EventEmitter();
 
 const DfuState = Object.freeze({
@@ -294,6 +292,6 @@ class Dfu extends EventEmitter {
     }
 }
 
-module.exports = {
+export{
     Dfu,
 };

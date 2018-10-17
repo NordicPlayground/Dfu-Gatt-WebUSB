@@ -1,6 +1,3 @@
-/*global Module */
-const { ble_event_struct } = require('./sdk/src/js/bindings/bleEvtStruct');
-
 class BleDevice {
     constructor(name, address, addrString) {
         this.name = name;

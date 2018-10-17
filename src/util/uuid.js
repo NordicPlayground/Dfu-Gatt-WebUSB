@@ -1,7 +1,7 @@
 /*global Module */
-const { ble_uuid128_t, ble_uuid_t } = require('../sdk/src/js/bindings/bleSDAttributeStructs');
-const { sd_ble_uuid_vs_add } = require('../sdk/src/js/ble_impl/ble_impl');
-const { NRF_SUCCESS } = require('../sdk/src/js/sd_rpc_types');
+import { ble_uuid128_t, ble_uuid_t } from 'pc-ble-driver-webusb';
+import { sd_ble_uuid_vs_add } from 'pc-ble-driver-webusb';
+import { NRF_SUCCESS } from 'pc-ble-driver-webusb';
 
 
 class bleUUID128t {

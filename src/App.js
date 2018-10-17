@@ -7,16 +7,15 @@ import DfuProgressComponent from './components/dfuProgressComponent';
 import logo from './logo.svg';
 import './App.css';
 
-import { WebusbInterface } from './sdk/src/js/transport/webusb_interface';
-const { H5Transport } = require('./sdk/src/js/transport/h5_transport');
-const { SerializationTransport } = require('./sdk/src/js/transport/serialization_transport');
-const { AdapterInternal } = require('./sdk/src/js/adapter_internal');
-const { sd_rpc_log_severity_t, NRF_SUCCESS, BLE_GAP_EVT_ADV_REPORT } = require('./sdk/src/js/sd_rpc_types');
-const { ble_cfg_t, ble_gap_cfg_t, ble_gap_cfg_role_count_t, ble_conn_cfg_t, ble_gatt_conn_cfg_t, ble_enable_params_t, ble_common_enable_params_t,
-ble_gap_enable_params_t, ble_gatts_enable_params_t, ble_gatt_enable_params_t, ble_gap_scan_params_t } = require('./sdk/src/js/bindings/bleSDAttributeStructs');
-const { sd_ble_enable, sd_ble_cfg_set } = require('./sdk/src/js/ble_impl/ble_impl');
-const { sd_ble_gap_scan_start, sd_ble_gap_scan_stop } = require('./sdk/src/js/ble_impl/ble_gap_impl');
-const { ble_event_struct } = require('./sdk/src/js/bindings/bleEvtStruct');
+import { ble_cfg_t, ble_gap_cfg_t, ble_gap_cfg_role_count_t, ble_conn_cfg_t, ble_gatt_conn_cfg_t, ble_enable_params_t, ble_common_enable_params_t,
+ble_gap_enable_params_t, ble_gatts_enable_params_t, ble_gatt_enable_params_t, ble_gap_scan_params_t } from 'pc-ble-driver-webusb'
+import { sd_ble_enable, sd_ble_cfg_set, sd_ble_gap_scan_start, sd_ble_gap_scan_stop } from 'pc-ble-driver-webusb'
+import { BLE_GAP_EVT_ADV_REPORT } from 'pc-ble-driver-webusb'
+ import { NRF_SUCCESS, sd_rpc_log_severity_t } from 'pc-ble-driver-webusb'
+
+import { WebusbInterface, H5Transport, SerializationTransport, AdapterInternal } from 'pc-ble-driver-webusb';
+
+import  { ble_event_struct } from 'pc-ble-driver-webusb'
 
 const { Dfu } = require('./dfu');
 const { DeviceScanner } = require('./deviceScanner');
