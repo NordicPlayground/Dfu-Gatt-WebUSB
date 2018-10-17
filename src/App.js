@@ -17,8 +17,8 @@ import { WebusbInterface, H5Transport, SerializationTransport, AdapterInternal }
 
 import  { ble_event_struct } from 'pc-ble-driver-webusb'
 
-const { Dfu } = require('./dfu');
-const { DeviceScanner } = require('./deviceScanner');
+import { Dfu } from'./dfu';
+import { DeviceScanner } from './deviceScanner';
 
 const BAUD_RATE = 1000000;
 

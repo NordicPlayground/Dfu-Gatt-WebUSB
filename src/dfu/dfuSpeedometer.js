@@ -36,7 +36,7 @@
 
 'use strict';
 
-class DfuSpeedometer {
+export default class DfuSpeedometer {
 
     /**
      * Create speedometer that keeps track of speed and progress of
@@ -104,5 +104,3 @@ function calculateBytesPerSecond(numBytes, beginTime, endTime) {
     const bytesPerSecond = numBytes / msTimeDifference * 1000;
     return +bytesPerSecond.toFixed(2);
 }
-
-module.exports = DfuSpeedometer;

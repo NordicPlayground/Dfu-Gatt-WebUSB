@@ -71,7 +71,7 @@ function arrayToInt(array) {
     return integer;
 }
 
-module.exports = {
+export {
     intToArray,
     arrayToInt,
 };

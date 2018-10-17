@@ -40,6 +40,6 @@ class bleUUID128t {
     }
 }
 
-/*module.exports =*/ export {
+export {
     bleUUID128t,
 };

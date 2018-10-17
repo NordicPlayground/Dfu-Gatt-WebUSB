@@ -47,9 +47,4 @@ class DeviceScanner {
         this.callback(null, device);
     }
 }
-
-
-
-module.exports = {
-    DeviceScanner,
-};
+export { DeviceScanner }

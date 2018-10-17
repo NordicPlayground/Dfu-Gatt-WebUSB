@@ -7,15 +7,15 @@ BLE_GAP_EVT_SEC_PARAMS_REQUEST, BLE_GATTC_EVT_HVX, BLE_GATTC_EVT_EXCHANGE_MTU_RS
 import { sd_ble_gattc_hv_confirm } from 'pc-ble-driver-webusb';
 import { ble_event_struct } from 'pc-ble-driver-webusb';
 
+import { BleTransport } from'./dfu/transport';
+
+import logLevel from './util/logLevel';
+import { createError, ErrorCode } from './dfu/dfuConstants';
+import DfuSpeedometer from './dfu/dfuSpeedometer';
+
 const _ = require('underscore');
 const JSZip = require('jszip');
 const EventEmitter = require('events');
-
-const { BleTransport } = require('./dfu/transport');
-
-const logLevel = require('./util/logLevel');
-const { createError, ErrorCode } = require('./dfu/dfuConstants');
-const DfuSpeedometer = require('./dfu/dfuSpeedometer');
 const dfuEvent = new EventEmitter();
 
 const DfuState = Object.freeze({

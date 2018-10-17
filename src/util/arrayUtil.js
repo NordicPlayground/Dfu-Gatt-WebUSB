@@ -51,6 +51,6 @@ function splitArray(data, chunkSize) {
     return chunks;
 }
 
-module.exports = {
+export {
     splitArray,
 };
