@@ -14,7 +14,7 @@ Currently using SD API V3, but can modified to support other versions as well.
 The application must be served over https in production due to security features in WebUSB.
 
 # Usage
-A modified connectivity firmware for the PCA10059 with interfaces for WebUSB is needed for this to work. Standard connectivity firmware uses interfaces 1 and 2 for transfers, which get claimed by the operating system. The WebUSB configuration found in src/sdk/src/js/transport/serial.js assumes interfaces 3 and 4 exists and are available for WebUSB to claim.
+A [modified connectivity firmware](https://github.com/mathiasap/pc-ble-driver-webusb/tree/experimental_firmware/experimental_connectivity_firmware) for the PCA10059 with interfaces for WebUSB is needed for this to work. Standard connectivity firmware uses interfaces 1 and 2 for transfers, which get claimed by the operating system. The WebUSB configuration found in src/sdk/src/js/transport/serial.js assumes interfaces 3 and 4 exists and are available for WebUSB to claim.
 The device you want to upgrade must have the DFU gatts service enabled. (e.g entering secure bootloader with dfu service enabled)
 
 # Status
