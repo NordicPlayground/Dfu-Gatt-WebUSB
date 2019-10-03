@@ -1,4 +1,7 @@
 # About
+
+[![Greenkeeper badge](https://badges.greenkeeper.io/NordicPlayground/Dfu-Gatt-WebUSB.svg)](https://greenkeeper.io/)
+
 This is an example program of using pc-ble-driver-webusb for DFU (device firmware upgrade) over gatt. 
 No other programs or dependencies than Google Chrome is needed on the target machine performing the DFU. Just enter the URL where the Dfu-Gatt-WebUSB is hosted, plug in a compatible nrf-dongle, and you're good to go!
 
